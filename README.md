@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+as a user i want to be able to view my po
+# user
+  - attribute
+    - id
+    - post 
+    - email
+    - password
+    - user name
+
+# post 
+  - one_attached image
+  - title string
+  - comments
