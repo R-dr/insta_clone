@@ -1,0 +1,33 @@
+.header {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.card-img-top {
+  width: 300px;
+}
+
+.posts-container {
+  width: 60%;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 7px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.links-container {
+
+}
+
+.post-link {
+  text-decoration: none;
+
+}
