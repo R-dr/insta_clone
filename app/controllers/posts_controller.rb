@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = current_user.posts
   end
 
   # GET /posts/1
@@ -54,6 +54,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :likes, :user_id)
+      params.require(:post).permit(:title, :likes)
     end
 end
