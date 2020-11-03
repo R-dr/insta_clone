@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
   def index
@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+
   end
 
   # GET /posts/new
@@ -49,7 +50,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = current_user.posts.find(params[:id])
+      @post = Post.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
