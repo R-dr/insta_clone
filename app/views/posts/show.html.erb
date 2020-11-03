@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title text-dark mb-1"> <%= @post.title %> </h5>
+          <%= image_tag @post.image, class: "card-img-top" if @post.image.attached? %>
+        <% if current_user.posts.include?(@post) %>
+      <%= link_to "Delete", post_path(@post.id), method: :delete %>
+      <%= link_to "Edit", edit_post_path(@post)%>
+    <% end %>
+      </div>
+     </div>
+</div>
+<%= link_to "Back", posts_path %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<hr>
 
-<p>
-  <strong>Likes:</strong>
-  <%= @post.likes %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <div>
+    <h3>User <%= comment.user_id.email %></h3>
+    <h3>Description: <%= comment.description %></h3>
+    <h3>Stars: <%= "⭐️" * comment.likes %></h3>
+  </div>
+<% end %>

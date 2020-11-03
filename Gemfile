@@ -37,6 +37,9 @@ group :development, :test do
   gem 'shoulda-matchers'
   # Use factories instead of fixtures for test data
   gem 'factory_bot_rails'
+  gem "database_cleaner", "~> 1.8"
+
+  gem "faker", "~> 2.14"
 end
 
 group :development do
@@ -56,3 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.7"
 
 gem "aws-sdk-s3", "~> 1.83"
+
