@@ -19,7 +19,6 @@
 <% @post.comments.each do |comment| %>
   <div>
     <h3>User <%= comment.user_id.email %></h3>
-    <h3>Description: <%= comment.description %></h3>
-    <h3>Stars: <%= "⭐️" * comment.likes %></h3>
+    <h3>Description: <%= comment.body%></h3>
   </div>
 <% end %>

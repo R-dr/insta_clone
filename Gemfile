@@ -60,3 +60,5 @@ gem "devise", "~> 4.7"
 
 gem "aws-sdk-s3", "~> 1.83"
 
+
+gem "rubocop", "~> 1.1"

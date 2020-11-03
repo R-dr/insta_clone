@@ -1,3 +1,6 @@
+<div class="text-center">
+  <div class="form-group row align-items-center justify-content-center  w-30 p-4">
+   <div class="card rounded row m-4">
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -10,21 +13,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="col-xs-3">
+  <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+</div>
 
   
 
- 
-  <div class="field">
+ <div class="col-xs-3">
+  <div class="form-group">
     <%= form.label :image %>
-    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg' %>
+    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg', class: 'form-control-file' %>
   </div>
-
+  </div>
    <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+  </div>
+</div>

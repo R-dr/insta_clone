@@ -1,0 +1,26 @@
+<h1 class='d-flex justify-content-center '>Weclome to InstaSpam!</h1>
+
+
+<div class="container">
+  <% @posts.each do |post| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title text-dark mb-1"> <%= post.title %> </h5>
+            <%= image_tag post.image, class: "card-img-top" if post.image.attached? %>
+            <div class="row">
+              <div class="col-5">
+              <%= post.user.email %>
+                </div>
+                <div class="col text-right">
+                  <%= link_to "Show", post_path(post.id), class: "btn btn-primary" %>
+                  <% if user_signed_in? && current_user.posts.include?(post) %>
+                    <%= link_to "Delete", post_path(post.id), class: "btn btn-danger", method: :delete %>
+                    <%= link_to "Edit", edit_post_path(post), class: "btn btn-info"%>
+                  <% end %>
+              </div>
+            
+            </div>
+        </div>
+    </div>
+  <% end %>
+</div>
