@@ -16,13 +16,12 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :likes %>
-    <%= form.number_field :likes %>
-  </div>
+  
+
+ 
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg' %>
   </div>
 
    <div class="actions">
