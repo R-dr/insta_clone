@@ -45,10 +45,10 @@ class PostsController < ApplicationController
     type = params[:type]
     if type == "like"
       current_user.likes.create(post: @post)
-      redirect_to posts_path
+      redirect_to posts_path, notice: 'You liked this post'
     elsif type == 'unlike'
       current_user.likes.delete_by(post: @post)
-      redirect_to posts_path, notice: 'Nothing happened.'
+      redirect_to posts_path, notice: 'You unliked this post.'
     end
   end
 

@@ -18,7 +18,11 @@
               <%= post.title %>
                 </div>
                 <div class="col text-right">
-              
+                <% if post.liked?(current_user)%>
+                <%= link_to "Unlike",   like_post_path(post.id, type: "unlike"), class: "btn btn-danger", method: :put %>
+                <% else %>
+                <%= link_to "Like",   like_post_path(post.id, type: "like"), class: "btn btn-success", method: :put %>
+                <% end %>
                   <%= link_to "Show", post_path(post.id), class: "btn btn-primary" %>
                   <% if user_signed_in? && current_user.posts.include?(post) %>
                     <%= link_to "Delete", post_path(post.id), class: "btn btn-danger", method: :delete %>
