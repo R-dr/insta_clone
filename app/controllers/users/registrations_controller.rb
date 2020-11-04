@@ -12,7 +12,7 @@ class users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    current_user.avatar.attach(params[:user][:avatar])
+    current_user.avatar.attach(params[:users][:avatar])
   end
 
   # GET /resource/edit
