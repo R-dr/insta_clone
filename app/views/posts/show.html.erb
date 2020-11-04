@@ -26,14 +26,14 @@
           <div class="post-copy">  
             <%= @post.title %>
             <% if current_user.posts.include?(@post) %>
-              <%= link_to "Delete", post_path(@post.id), method: :delete %>
-              <%= link_to "Edit", edit_post_path(@post)%>
+              <%= link_to "Delete", post_path(@post.id), class: "btn btn-danger", method: :delete %>
+              <%= link_to "Edit", edit_post_path(@post), class: "btn btn-info"%>
             <% end %>
         </div>
       </div>
     </div>
 </div>
-<%= link_to "Back", posts_path %>
+<%= link_to "Back", posts_path, class: "btn btn-dark" %>
 
 <hr>
 
