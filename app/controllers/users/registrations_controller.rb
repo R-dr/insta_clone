@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class users::RegistrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -12,7 +12,7 @@ class users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    current_user.avatar.attach(params[:users][:avatar])
+    current_user.avatar.attach(params[:user][:avatar])
   end
 
   # GET /resource/edit
