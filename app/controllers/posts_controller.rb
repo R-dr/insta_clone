@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
 
   # GET /posts
   def index
@@ -38,6 +38,17 @@ class PostsController < ApplicationController
       redirect_to @post, notice: 'Post was successfully updated.'
     else
       render :edit
+    end
+  end
+
+  def like
+    type = params[:type]
+    if type == "like"
+      current_user.likes.create(post: @post)
+      redirect_to posts_path
+    elsif type == 'unlike'
+      current_user.likes.delete_by(post: @post)
+      redirect_to posts_path, notice: 'Nothing happened.'
     end
   end
 
