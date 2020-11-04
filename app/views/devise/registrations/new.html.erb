@@ -31,8 +31,15 @@
           <div class="form-group">
             <%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
         </div>
-      </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <%= f.label :avatar %><br/>
+            <%= f.file_field :avatar %>
+          </div>
+        </div>
+
       
       <div class="actions">
         <%= f.submit "Sign up", class: 'btn btn-primary' %>
