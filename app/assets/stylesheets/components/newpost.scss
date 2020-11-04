@@ -1,0 +1,20 @@
+.new-post-container {
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5%;
+  .new-post-form {
+    display: flex;
+    border: none;
+    justify-content: space-around;
+    flex-direction: column;
+    .new-post-input {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.new-post-header {
+  width: 50%;
+  margin: 0 auto;
+}
