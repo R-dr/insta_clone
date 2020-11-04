@@ -5,11 +5,17 @@
   <% @posts.each do |post| %>
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title text-dark mb-1"> <%= post.title %> </h5>
+          <h5 class="card-title text-dark mb-1"> 
+            <% if post.user.username %>
+              <%= post.user.username %> 
+            <% else %>
+              <%= post.user.email %>
+            <% end %>
+          </h5>
             <%= image_tag post.image, class: "card-img-top" if post.image.attached? %>
             <div class="row">
               <div class="col-5">
-              <%= post.user.email %>
+              <%= post.title %>
                 </div>
                 <div class="col text-right">
                   <%= link_to "Show", post_path(post.id), class: "btn btn-primary" %>
