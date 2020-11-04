@@ -2,23 +2,14 @@
 <div>
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title text-dark mb-1"> 
-          <% if @post.user.username %>
-            <%= @post.user.username %> 
-          <% else %>
-            <%= @post.user.email %>
-          <% end %> 
-        </h5>
-        <%= image_tag @post.image, class: "card-img-top" if @post.image.attached? %>
-        <div class="post-copy">  
-          <%= @post.title %>
-          <% if current_user.posts.include?(@post) %>
-            <%= link_to "Delete", post_path(@post.id), method: :delete %>
-            <%= link_to "Edit", edit_post_path(@post)%>
-          <% end %>
-        </div>
+        <h5 class="card-title text-dark mb-1"> <%= @post.title %> </h5>
+          <%= image_tag @post.image, class: "card-img-top" if @post.image.attached? %>
+        <% if current_user.posts.include?(@post) %>
+      <%= link_to "Delete", post_path(@post.id), method: :delete %>
+      <%= link_to "Edit", edit_post_path(@post)%>
+    <% end %>
       </div>
-    </div>
+     </div>
 </div>
 <%= link_to "Back", posts_path %>
 
