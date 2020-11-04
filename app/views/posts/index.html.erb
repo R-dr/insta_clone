@@ -1,17 +1,30 @@
-<h1 class='d-flex justify-content-center '>Weclome to InstaSpam!</h1>
+<h1 class='d-flex justify-content-center '>Welcome to InstaSpam!</h1>
 
 
 <div class="container">
   <% @posts.each do |post| %>
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title text-dark mb-1"> 
-            <% if post.user.username %>
-              <%= post.user.username %> 
-            <% else %>
-              <%= post.user.email %>
-            <% end %>
-          </h5>
+          <div class="post-header mb-3">
+            <div class="avatar-container mr-3">
+              <% if post.user.avatar.attached? %>
+                <div class="rounded-circle">
+                  <%= image_tag post.user.avatar, class: "rounded-circle" %>
+                </div>
+              <% else %>
+                <div class="rounded-circle placeholder"></div>
+              <% end %>
+            </div>
+            <div class="post-user-info">
+              <h5 class="card-title text-dark mb-1 align-self-center"> 
+                <% if post.user.username %>
+                  <%= post.user.username %> 
+                <% else %>
+                  <%= post.user.email %>
+                <% end %>
+              </h5>
+            </div>
+          </div>
             <%= image_tag post.image, class: "card-img-top" if post.image.attached? %>
             <div class="row">
               <div class="col-5">
