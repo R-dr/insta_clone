@@ -1,4 +1,4 @@
-<h1 class='d-flex justify-content-center '>Welcome to InstaSpam!</h1>
+<h1 class='d-flex justify-content-center posts-header'>Welcome to InstaSpam!</h1>
 
 
 <div class="container">
@@ -25,7 +25,7 @@
               </h5>
             </div>
           </div>
-            <%= image_tag post.image, class: "card-img-top" if post.image.attached? %>
+            <%= image_tag post.image, class: "card-img-top post-image" if post.image.attached? %>
             <div class="row">
               <div class="col-5">
               <%= post.title %>

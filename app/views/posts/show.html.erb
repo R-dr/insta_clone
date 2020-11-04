@@ -22,13 +22,13 @@
               </h5>
             </div>
           </div>
-        <%= image_tag @post.image, class: "card-img-top" if @post.image.attached? %>
-        <div class="post-copy">  
-          <%= @post.title %>
-          <% if current_user.posts.include?(@post) %>
-            <%= link_to "Delete", post_path(@post.id), method: :delete %>
-            <%= link_to "Edit", edit_post_path(@post)%>
-          <% end %>
+            <%= image_tag @post.image, class: "card-img-top post-image" if @post.image.attached? %>
+          <div class="post-copy">  
+            <%= @post.title %>
+            <% if current_user.posts.include?(@post) %>
+              <%= link_to "Delete", post_path(@post.id), method: :delete %>
+              <%= link_to "Edit", edit_post_path(@post)%>
+            <% end %>
         </div>
       </div>
     </div>
